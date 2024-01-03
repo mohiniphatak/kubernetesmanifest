@@ -14,10 +14,10 @@ node {
                         //def encodedPassword = URLEncoder.encode("$GIT_PASSWORD",'UTF-8')
                         sh "git config user.email phatakmohini@gmail.com"
                         sh "git config user.name mohiniphatak"
-                        //sh "git switch master"
+                        sh "git switch main"
                         sh "cat deployment.yaml"
                         //sh "sed -i 's+monikartik11/gitops-terraform-jenkins.*+monikartik11/gitops-terraform-jenkins:${DOCKERTAG}+g' deployment.yaml"
-                        sh "sed -i 's+monikartik11/gitops-terraform-jenkins.*/monikartik11/gitops-terraform-jenkins:${DOCKERTAG}/g' deployment.yaml" 
+                        sh "sed -i 's+monikartik11/gitops-terraform-jenkins.*+monikartik11/gitops-terraform-jenkins:${DOCKERTAG}+g' deployment.yaml" 
                         sh "cat deployment.yaml"
                         sh "git add ."
                         sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"

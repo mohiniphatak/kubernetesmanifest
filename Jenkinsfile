@@ -17,7 +17,7 @@ node {
                         
                         // sh "cat deployment.yaml"
                         //sh "sed -i 's+monikartik11/gitops-terraform-jenkins.*+monikartik11/gitops-terraform-jenkins:${DOCKERTAG}+g' deployment.yaml"
-                        sh "sed -i 's+jenkins.*+jenkins:${DOCKERTAG}+g' deployment.yaml"
+                        sh "sed -i 's+monikartik11/gitops-terraform-jenkins.*+monikartik11/gitops-terraform-jenkins:${DOCKERTAG}+g' deployment.yaml"
 
                         sh "cat deployment.yaml"
                         sh "git add deployment.yaml"

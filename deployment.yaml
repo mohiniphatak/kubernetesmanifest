@@ -33,4 +33,4 @@ spec:
     spec:
       containers:
       - name: frontend-container
-        image: monikartik11/gitops-terraform-jenkins:19
+        image: nginx

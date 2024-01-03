@@ -18,7 +18,7 @@ spec:
         app: flaskdemo
     spec:
       containers:
-      - image: monikartik11/terraform-jenkins-gitops:latest
+      - image: monikartik11/terraform-jenkins:39
         name: flaskdemo
         resources: {}
 status: {}

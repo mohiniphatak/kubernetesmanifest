@@ -20,10 +20,12 @@ node {
                         sh "sed -i 's+jenkins.*+jenkins:${DOCKERTAG}+g' deployment.yaml"
 
                         sh "cat deployment.yaml"
+                        sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
+                        sh "git add ."
                         sh "git switch main"
                         sh "git pull https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/kubernetesmanifest.git"
-                        sh "git add ."
-                        sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
+                        sh "git switch main"
+                        
                         
                         sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/kubernetesmanifest.git"
 

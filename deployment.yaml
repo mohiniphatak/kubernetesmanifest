@@ -1,38 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
-    app: flaskdemo
-  name: flaskdemo
+    environment: test
+  name: test
 spec:
+<<<<<<< HEAD
   replicas: 2
+=======
+  replicas: 1
+>>>>>>> d4d0581512a7abc5d1d81b64abf41a417b4bd8e2
   selector:
     matchLabels:
-      app: flaskdemo
-  strategy: {}
+      environment: test
   template:
     metadata:
-      creationTimestamp: null
       labels:
-        app: flaskdemo
+        environment: test
     spec:
       containers:
-      - image: monikartik11/gitops-terraform-jenkins:19
-        name: flaskdemo
-        resources: {}
-status: {}
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: lb-service
-  labels:
-    app: lb-service
-spec:
-  type: LoadBalancer
-  ports:
-  - port: 80
-    targetPort: 5000
-  selector:
-    app: flaskdemo
+      - image: nginx:1.16
+        name: nginx

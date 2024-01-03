@@ -16,8 +16,8 @@ node {
                         sh "git config user.name mohiniphatak"
                         
                         // sh "cat deployment.yaml"
-                        sh "sed -i 's+monikartik11/gitops-terraform-jenkins.*+monikartik11/gitops-terraform-jenkins:${DOCKERTAG}+g' deployment.yaml"
-                        //sh "sed -i 's+jenkins.*+jenkins:${DOCKERTAG}+g' deployment.yaml"
+                        //sh "sed -i 's+monikartik11/gitops-terraform-jenkins.*+monikartik11/gitops-terraform-jenkins:${DOCKERTAG}+g' deployment.yaml"
+                        sh "sed -i 's+gitops-terraform-jenkins.*+gitops-terraform-jenkins:${DOCKERTAG}+g' deployment.yaml"
 
                         sh "cat deployment.yaml"
                         sh "git add deployment.yaml"
